@@ -21,8 +21,11 @@ public class UberHardCraft implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
+		EpicItems.initialize();
+		EpicBlocks.initialize();
 		LOGGER.info("Hello Fabric world!");
 	}
+
 
 	public static Identifier id(String path) {
 		return Identifier.fromNamespaceAndPath(MOD_ID, path);
