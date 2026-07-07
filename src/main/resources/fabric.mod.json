@@ -3,9 +3,10 @@
 	"id": "uberhardcraft",
 	"version": "${version}",
 	"name": "uberHardCraft",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "This mod is all about FUN!",
 	"authors": [
-		"Me!"
+		"Saucy Bossy",
+		"Le Coy de DE"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
