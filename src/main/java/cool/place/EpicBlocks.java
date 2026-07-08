@@ -44,8 +44,22 @@ public class EpicBlocks {
 
     public static final Block NEW_FLINT = register(
             "new_flint",
-            Block::new,
-            BlockBehaviour.Properties.of().sound(SoundType.GRASS),
+            flint_block::new,
+            BlockBehaviour.Properties.of().sound(SoundType.GLASS),
+            true
+    );
+
+    public static final Block NEW_FLINT_LARGE = register(
+            "new_flint_large",
+            flint_block_large::new,
+            BlockBehaviour.Properties.of().sound(SoundType.GLASS),
+            true
+    );
+
+    public static final Block NEW_FLINT_SMALL = register(
+            "new_flint_small",
+            flint_block_small::new,
+            BlockBehaviour.Properties.of().sound(SoundType.GLASS),
             true
     );
 

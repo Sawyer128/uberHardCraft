@@ -1,0 +1,69 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:spruce_log"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        },
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "items": [
+              "minecraft:copper_axe",
+              "minecraft:diamond_axe",
+              "minecraft:golden_axe",
+              "minecraft:iron_axe",
+              "minecraft:stone_axe",
+              "minecraft:netherite_axe",
+              "minecraft:wooden_axe",
+              "uberhardcraft:flint_axe"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "rolls": 3,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "uberhardcraft:bark_fiber",
+          "conditions": []
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": [
+                "minecraft:copper_axe",
+                "minecraft:diamond_axe",
+                "minecraft:golden_axe",
+                "minecraft:iron_axe",
+                "minecraft:stone_axe",
+                "minecraft:netherite_axe",
+                "minecraft:wooden_axe",
+                "uberhardcraft:flint_axe"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "random_sequence": "minecraft:blocks/oak_log"
+}

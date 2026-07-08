@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "uberhardcraft:flint_pickaxehead",
+    "uberhardcraft:bark_fiber",
+    "minecraft:stick"
+  ],
+  "result": {
+    "id": "uberhardcraft:flint_pickaxe"
+  }
+}

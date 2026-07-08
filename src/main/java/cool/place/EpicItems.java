@@ -6,9 +6,12 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.Block;
 
+import javax.tools.Tool;
 import java.util.function.Function;
 
 public class EpicItems {
@@ -27,15 +30,56 @@ public class EpicItems {
     }
 
     public static final Item ROCK = register("rock_chunk", Item::new, new Item.Properties());
+    public static final Item FLINT_AXEHEAD = register("flint_axehead", Item::new, new Item.Properties());
+    public static final Item FLINT_SHOVELHEAD = register("flint_shovelhead", Item::new, new Item.Properties());
+    public static final Item FLINT_PICKAXEHEAD = register("flint_pickaxehead", Item::new, new Item.Properties());
+    public static final Item BARK = register("bark_fiber", Item::new, new Item.Properties());
+    public static final Item FLINT_AXE = register(
+            "flint_axe",
+            settings -> new AxeItem(flint_tool.FLINT_TOOL_MATERIAL, 2.0F, -3.0F, settings),
+            new Item.Properties()
+    );
+    public static final Item FLINT_SHOVEL = register(
+            "flint_shovel",
+            settings -> new ShovelItem(flint_tool.FLINT_TOOL_MATERIAL, 1.0F, -3.0F, settings),
+            new Item.Properties()
+    );
+    public static final Item FLINT_PICKAXE = register(
+            "flint_pickaxe",
+            Item::new,
+            new Item.Properties().pickaxe(flint_tool.FLINT_TOOL_MATERIAL, 1f, 1f)
+    );
+
+
+
 
     public static void initialize() {
-
         // Get the event for modifying entries in the ingredients group.
-        // And register an event handler that adds our suspicious item to the ingredients group.
+        // And register an event handler that adds items to the group oh your choice (INGREDIENTS).
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS)
                 .register((creativeTab) -> creativeTab.accept(EpicItems.ROCK));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS)
+                .register((creativeTab) -> creativeTab.accept(EpicItems.FLINT_AXEHEAD));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS)
+                .register((creativeTab) -> creativeTab.accept(EpicItems.FLINT_PICKAXEHEAD));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS)
+                .register((creativeTab) -> creativeTab.accept(EpicItems.FLINT_SHOVELHEAD));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS)
+                .register((creativeTab) -> creativeTab.accept(EpicItems.BARK));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES)
+                .register((creativeTab) -> creativeTab.accept(EpicItems.FLINT_AXE));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES)
+                .register((creativeTab) -> creativeTab.accept(EpicItems.FLINT_SHOVEL));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES)
+                .register((creativeTab) -> creativeTab.accept(EpicItems.FLINT_PICKAXE));
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register((creativeTab) -> {
             creativeTab.accept(EpicBlocks.NEW_FLINT.asItem());
+        });
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register((creativeTab) -> {
+            creativeTab.accept(EpicBlocks.NEW_FLINT_LARGE.asItem());
+        });
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register((creativeTab) -> {
+            creativeTab.accept(EpicBlocks.NEW_FLINT_SMALL.asItem());
         });
 
     }

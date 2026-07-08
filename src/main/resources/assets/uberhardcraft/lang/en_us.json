@@ -1,4 +1,13 @@
 {
   "item.uberhardcraft.rock_chunk": "Cobblestone Chunk",
-  "block.uberhardcraft.new_flint": "Flint"
+  "item.uberhardcraft.flint_axehead": "Flint Axehead",
+  "item.uberhardcraft.flint_pickaxehead": "Flint Pickaxehead",
+  "item.uberhardcraft.flint_shovelhead": "Flint Shovelhead",
+  "item.uberhardcraft.bark_fiber": "Bark Fiber",
+  "item.uberhardcraft.flint_axe": "Flint Axe",
+  "item.uberhardcraft.flint_pickaxe": "Flint Pickaxe",
+  "item.uberhardcraft.flint_shovel": "Flint Shovel",
+  "block.uberhardcraft.new_flint_small": "Small Flint Plate",
+  "block.uberhardcraft.new_flint": "Medium Flint Plate",
+  "block.uberhardcraft.new_flint_large": "Large Flint Plate"
 }
