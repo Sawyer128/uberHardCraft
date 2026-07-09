@@ -14,6 +14,7 @@ public class flint_tool {
     public static final TagKey<Block> INCORRECT_FOR_FLINT_TOOL = TagKey.create(BuiltInRegistries.BLOCK.key(),
             Identifier.fromNamespaceAndPath(UberHardCraft.MOD_ID, "incorrect_for_flint_tool"));
 
+
     public static final ToolMaterial FLINT_TOOL_MATERIAL = new ToolMaterial(
             INCORRECT_FOR_FLINT_TOOL,
             32,
