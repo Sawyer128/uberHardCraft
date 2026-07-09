@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "experience": 0,
+  "cookingtime": 200,
+  "ingredient": "uberhardcraft:unfired_crucible",
+  "result": {
+    "id": "uberhardcraft:fired_crucible"
+  }
+}

@@ -23,6 +23,7 @@ public class UberHardCraft implements ModInitializer {
 
 		EpicItems.initialize();
 		EpicBlocks.initialize();
+		//EpicTypes.initialize();
 		LOGGER.info("Hello Fabric world!");
 	}
 

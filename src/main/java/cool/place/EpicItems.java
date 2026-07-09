@@ -35,7 +35,7 @@ public class EpicItems {
     public static final Item FLINT_PICKAXEHEAD = register("flint_pickaxehead", pickhead_item::new, new Item.Properties());
     public static final Item BARK = register("bark_fiber", Item::new, new Item.Properties());
     public static final Item WOODEN_SIFT = register("wooden_sift", sift_item::new, new Item.Properties()
-            .durability(10)); //Need to make it so that the tool gets damaged when i breaks a block
+            .durability(10));
     public static final Item FLINT_AXE = register(
             "flint_axe",
             settings -> new AxeItem(flint_tool.FLINT_TOOL_MATERIAL, 2.0F, -3.0F, settings),
@@ -94,6 +94,9 @@ public class EpicItems {
         });
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register((creativeTab) -> {
             creativeTab.accept(EpicBlocks.MOLD_PICKHEAD.asItem());
+        });
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register((creativeTab) -> {
+            creativeTab.accept(EpicBlocks.FIRED_CRUCIBLE.asItem());
         });
 
     }

@@ -5,11 +5,15 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 
 import java.util.function.Function;
 
@@ -90,6 +94,57 @@ public class EpicBlocks {
             BlockBehaviour.Properties.of().sound(SoundType.GRAVEL),
             true
     );
+
+    public static final Block FIRED_CRUCIBLE = register(
+            "fired_crucible",
+            crucible_block::new,
+            BlockBehaviour.Properties.of().sound(SoundType.STONE),
+            true
+    );
+
+    public static final Block UNFIRED_CRUCIBLE = register(
+            "unfired_crucible",
+            unfired_crucible_block::new,
+            BlockBehaviour.Properties.of().sound(SoundType.GRAVEL),
+            true
+    );
+
+    public static final Block KILN_BLOCK = register(
+            "kiln_block",
+            Block::new,
+            BlockBehaviour.Properties.of().sound(SoundType.STONE),
+            true
+    );
+
+    public static final Block KILN_VENT = register(
+            "kiln_vent",
+            Block::new,
+            BlockBehaviour.Properties.of().sound(SoundType.STONE),
+            true
+    );
+
+    public static final Block KILN_BLOCK_SLAB = register(
+            "kiln_block_slab",
+            SlabBlock::new,
+            BlockBehaviour.Properties.of().sound(SoundType.STONE),
+            true
+    );
+
+    public static final Block KILN_HATCH = register(
+            "kiln_hatch",
+            settings -> new TrapDoorBlock(BlockSetType.OAK, settings),
+            BlockBehaviour.Properties.of().sound(SoundType.STONE),
+            true
+    );
+
+    public static final Block KILN_RACK = register(
+            "kiln_rack",
+            kiln_rack_block::new,
+            BlockBehaviour.Properties.of().sound(SoundType.STONE),
+            true
+    );
+
+
 
     public static void initialize() {
     }
