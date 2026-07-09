@@ -10,29 +10,16 @@
           "conditions": [
             {
               "condition": "minecraft:random_chance",
-              "chance": 0.3
+              "chance": 0.6
             }
-          ],
-          "functions": []
+          ]
         }
       ],
       "conditions": [
         {
-          "condition": "minecraft:inverted",
-          "term": {
-            "condition": "minecraft:match_tool",
-            "predicate": {
-              "items": [
-                "minecraft:copper_shovel",
-                "minecraft:diamond_shovel",
-                "minecraft:golden_shovel",
-                "minecraft:iron_shovel",
-                "minecraft:netherite_shovel",
-                "minecraft:stone_shovel",
-                "uberhardcraft:flint_shovel",
-                "minecraft:wooden_shovel"
-              ]
-            }
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "items": "uberhardcraft:wooden_sift"
           }
         }
       ]
@@ -42,8 +29,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:dirt",
-          "weight": 1
+          "name": "minecraft:dirt"
         }
       ],
       "conditions": [

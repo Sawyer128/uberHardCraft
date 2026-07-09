@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:oak_log"
+    },
+    "title": {
+      "translate": "advancements.uberhard.root.title"
+    },
+    "description": {
+      "translate": "advancements.uberhard.root.description"
+    },
+    "background": "uberhardcraft:gui/advancements/backgrounds/uberhard",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "break_log": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "uberhardcraft:bark_fiber"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "break_log"
+    ]
+  ]
+}

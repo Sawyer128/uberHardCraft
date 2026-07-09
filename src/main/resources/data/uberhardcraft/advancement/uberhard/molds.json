@@ -1,0 +1,63 @@
+{
+  "display": {
+    "icon": {
+      "id": "uberhardcraft:blank_mold"
+    },
+    "title": {
+      "translate": "advancements.uberhard.molds.title"
+    },
+    "description": {
+      "translate": "advancements.uberhard.molds.description"
+    },
+    "hidden": false
+  },
+  "parent": "uberhardcraft:uberhard/flint_plate",
+  "criteria": {
+    "mold_axehead": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "uberhardcraft:flint_pickaxehead"
+            }
+          }
+        ]
+      }
+    },
+    "mold_shovelhead": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "uberhardcraft:flint_shovelhead"
+            }
+          }
+        ]
+      }
+    },
+    "mold_pickhead": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "uberhardcraft:flint_axehead"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "mold_axehead",
+      "mold_pickhead",
+      "mold_shovelhead"
+    ]
+  ]
+}

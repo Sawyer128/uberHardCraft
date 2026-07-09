@@ -1,0 +1,53 @@
+{
+  "display": {
+    "icon": {
+      "id": "uberhardcraft:new_flint"
+    },
+    "title": {
+      "translate": "advancements.uberhard.flint_plate.title"
+    },
+    "description": {
+      "translate": "advancements.uberhard.flint_plate.description"
+    }
+  },
+  "parent": "uberhardcraft:uberhard/root",
+  "criteria": {
+    "small_flint_plate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "uberhardcraft:new_flint_small"
+          }
+        ]
+      }
+    },
+    "large_flint_plate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "uberhardcraft:new_flint_large"
+          }
+        ]
+      }
+    },
+    "medium_flint_plate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "uberhardcraft:new_flint"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "small_flint_plate",
+      "medium_flint_plate",
+      "large_flint_plate"
+    ]
+  ]
+}

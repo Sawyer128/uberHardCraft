@@ -4,6 +4,7 @@
   "item.uberhardcraft.flint_pickaxehead": "Flint Pickaxehead",
   "item.uberhardcraft.flint_shovelhead": "Flint Shovelhead",
   "item.uberhardcraft.bark_fiber": "Bark Fiber",
+  "item.uberhardcraft.wooden_sift": "Wooden Sift",
   "item.uberhardcraft.flint_axe": "Flint Axe",
   "item.uberhardcraft.flint_pickaxe": "Flint Pickaxe",
   "item.uberhardcraft.flint_shovel": "Flint Shovel",
@@ -13,5 +14,15 @@
   "block.uberhardcraft.mold_pickhead": "Pickaxehead Mold",
   "block.uberhardcraft.new_flint_small": "Small Flint Plate",
   "block.uberhardcraft.new_flint": "Medium Flint Plate",
-  "block.uberhardcraft.new_flint_large": "Large Flint Plate"
+  "block.uberhardcraft.new_flint_large": "Large Flint Plate",
+  "advancements.uberhard.root.description": "Maybe you can get a log if you punch a little harder ;)",
+  "advancements.uberhard.root.title": "UberHardCraft",
+  "advancements.uberhard.wooden_sift.description": "Craft a wooden sift to get flint from gravel and rocks from dirt",
+  "advancements.uberhard.wooden_sift.title": "Sift Away!",
+  "advancements.uberhard.flint_plate.description": "Construct a flint plate, smashed with a rock to create flint toolheads",
+  "advancements.uberhard.flint_plate.title": "Flint Age",
+  "advancements.uberhard.flint_axe.description": "Regain the ability to chop trees by crafting a flint axe",
+  "advancements.uberhard.flint_axe.title": "Back in Business",
+  "advancements.uberhard.molds.description": "Shape a mold with a toolhead",
+  "advancements.uberhard.molds.title": "Somethings moldy..."
 }

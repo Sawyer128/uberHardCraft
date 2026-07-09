@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "id": "uberhardcraft:flint_axe"
+    },
+    "title": {
+      "translate": "advancements.uberhard.flint_axe.title"
+    },
+    "description": {
+      "translate": "advancements.uberhard.flint_axe.description"
+    },
+    "hidden": false
+  },
+  "parent": "uberhardcraft:uberhard/flint_plate",
+  "criteria": {
+    "flint_axe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "uberhardcraft:flint_axe"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "flint_axe"
+    ]
+  ]
+}

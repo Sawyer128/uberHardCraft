@@ -1,0 +1,31 @@
+{
+  "display": {
+    "icon": {
+      "id": "uberhardcraft:wooden_sift"
+    },
+    "title": {
+      "translate": "advancements.uberhard.wooden_sift.title"
+    },
+    "description": {
+      "translate": "advancements.uberhard.wooden_sift.description"
+    }
+  },
+  "parent": "uberhardcraft:uberhard/root",
+  "criteria": {
+    "wooden_sift": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "uberhardcraft:wooden_sift"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "wooden_sift"
+    ]
+  ]
+}
