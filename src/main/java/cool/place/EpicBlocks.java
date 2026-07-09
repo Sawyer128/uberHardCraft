@@ -63,6 +63,34 @@ public class EpicBlocks {
             true
     );
 
+    public static final Block BLANK_MOLD = register(
+            "blank_mold",
+            flint_block::new,
+            BlockBehaviour.Properties.of().sound(SoundType.GRAVEL),
+            true
+    );
+
+    public static final Block MOLD_AXEHEAD = register(
+            "mold_axehead",
+            flint_block::new,
+            BlockBehaviour.Properties.of().sound(SoundType.GRAVEL),
+            true
+    );
+
+    public static final Block MOLD_PICKHEAD = register(
+            "mold_pickhead",
+            flint_block::new,
+            BlockBehaviour.Properties.of().sound(SoundType.GRAVEL),
+            true
+    );
+
+    public static final Block MOLD_SHOVELHEAD = register(
+            "mold_shovelhead",
+            flint_block::new,
+            BlockBehaviour.Properties.of().sound(SoundType.GRAVEL),
+            true
+    );
+
     public static void initialize() {
     }
 }

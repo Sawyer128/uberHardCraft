@@ -30,9 +30,9 @@ public class EpicItems {
     }
 
     public static final Item ROCK = register("rock_chunk", Item::new, new Item.Properties());
-    public static final Item FLINT_AXEHEAD = register("flint_axehead", Item::new, new Item.Properties());
-    public static final Item FLINT_SHOVELHEAD = register("flint_shovelhead", Item::new, new Item.Properties());
-    public static final Item FLINT_PICKAXEHEAD = register("flint_pickaxehead", Item::new, new Item.Properties());
+    public static final Item FLINT_AXEHEAD = register("flint_axehead", axehead_item::new, new Item.Properties());
+    public static final Item FLINT_SHOVELHEAD = register("flint_shovelhead", shovelhead_item::new, new Item.Properties());
+    public static final Item FLINT_PICKAXEHEAD = register("flint_pickaxehead", pickhead_item::new, new Item.Properties());
     public static final Item BARK = register("bark_fiber", Item::new, new Item.Properties());
     public static final Item FLINT_AXE = register(
             "flint_axe",
@@ -80,6 +80,18 @@ public class EpicItems {
         });
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register((creativeTab) -> {
             creativeTab.accept(EpicBlocks.NEW_FLINT_SMALL.asItem());
+        });
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register((creativeTab) -> {
+            creativeTab.accept(EpicBlocks.BLANK_MOLD.asItem());
+        });
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register((creativeTab) -> {
+            creativeTab.accept(EpicBlocks.MOLD_AXEHEAD.asItem());
+        });
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register((creativeTab) -> {
+            creativeTab.accept(EpicBlocks.MOLD_SHOVELHEAD.asItem());
+        });
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register((creativeTab) -> {
+            creativeTab.accept(EpicBlocks.MOLD_PICKHEAD.asItem());
         });
 
     }

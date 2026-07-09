@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:sand",
+    "minecraft:clay_ball",
+    "minecraft:clay_ball"
+  ],
+  "result": {
+    "id": "uberhardcraft:blank_mold"
+  }
+}

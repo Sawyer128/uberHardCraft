@@ -7,6 +7,10 @@
   "item.uberhardcraft.flint_axe": "Flint Axe",
   "item.uberhardcraft.flint_pickaxe": "Flint Pickaxe",
   "item.uberhardcraft.flint_shovel": "Flint Shovel",
+  "block.uberhardcraft.blank_mold": "Blank Mold",
+  "block.uberhardcraft.mold_axehead": "Axehead Mold",
+  "block.uberhardcraft.mold_shovelhead": "Shovelhead Mold",
+  "block.uberhardcraft.mold_pickhead": "Pickaxehead Mold",
   "block.uberhardcraft.new_flint_small": "Small Flint Plate",
   "block.uberhardcraft.new_flint": "Medium Flint Plate",
   "block.uberhardcraft.new_flint_large": "Large Flint Plate"
