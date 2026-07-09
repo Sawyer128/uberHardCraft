@@ -4,14 +4,14 @@ This mod is intended to increase the difficulty of the early game of minecraft
 <details>
     <summary> List of Features </summary>
 
-  ### Flint Expansion
-  - Flint Plates
-    - Flint Pickaxe Head
-    - Flint Shovel Head
-    - Flint Axe Head
-  - Flint Pickaxe
-  - Flint Shovel
-  - Flint Axe
+    ### Flint Expansion
+    - Flint Plates
+        - Flint Pickaxe Head
+        - Flint Shovel Head
+        - Flint Axe Head
+    - Flint Pickaxe
+    - Flint Shovel
+    - Flint Axe
 
     ### Metallurgy
     - Blank Mold
