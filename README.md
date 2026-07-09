@@ -34,4 +34,5 @@ This mod is intended to increase the difficulty of the early game of minecraft
             - Logic so the kiln fire will only work when supplied with airflow
         - Kiln Hatch
     - Crucible 
+    - Fix some stupid item/block identifiers like blank_mold instead of mold_blank and new_flint to flint_plate
 </details>
