@@ -13,10 +13,6 @@ public class crucible_block_entity extends BlockEntity implements ContainerSingl
 
     private ItemStack item = ItemStack.EMPTY;
 
-    public crucible_block_entity(BlockEntityType<?> type, BlockPos worldPosition, BlockState blockState) {
-        super(type, worldPosition, blockState);
-    }
-
     public crucible_block_entity(BlockPos pos, BlockState state) {
         super(EpicBlockEntities.FIRED_CRUCIBLE_ENTITY, pos, state);
     }

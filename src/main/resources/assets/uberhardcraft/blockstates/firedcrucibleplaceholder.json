@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "liquid=false,level=0": {
+      "model": "uberhardcraft:block/fired_crucible"
+    },
+    "liquid=false,level=1": {
+      "model": "uberhardcraft:block/fired_crucible_raw_copper_1"
+    },
+    "liquid=false,level=2": {
+      "model": "uberhardcraft:block/fired_crucible_raw_copper_2"
+    },
+    "liquid=false,level=3": {
+      "model": "uberhardcraft:block/fired_crucible_raw_copper_3"
+    },
+    "liquid=false,level=4": {
+      "model": "uberhardcraft:block/fired_crucible_raw_copper_4"
+    },
+    "liquid=false,level=5": {
+      "model": "uberhardcraft:block/fired_crucible_raw_copper_5"
+    }
+  }
+}

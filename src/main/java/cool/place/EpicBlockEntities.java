@@ -22,4 +22,7 @@ public class EpicBlockEntities {
         return Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, id, FabricBlockEntityTypeBuilder.<T>create(entityFactory, blocks).build());
     }
 
+    public static void initialize() {
+    }
+
 }

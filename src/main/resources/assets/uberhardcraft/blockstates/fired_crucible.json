@@ -1,7 +1,37 @@
 {
   "variants": {
-    "": {
+    "ore=none,liquid=false,level=0": {
       "model": "uberhardcraft:block/fired_crucible"
+    },
+    "ore=copper,liquid=false,level=1": {
+      "model": "uberhardcraft:block/fired_crucible_raw_copper_1"
+    },
+    "ore=copper,liquid=false,level=2": {
+      "model": "uberhardcraft:block/fired_crucible_raw_copper_2"
+    },
+    "ore=copper,liquid=false,level=3": {
+      "model": "uberhardcraft:block/fired_crucible_raw_copper_3"
+    },
+    "ore=copper,liquid=false,level=4": {
+      "model": "uberhardcraft:block/fired_crucible_raw_copper_4"
+    },
+    "ore=copper,liquid=false,level=5": {
+      "model": "uberhardcraft:block/fired_crucible_raw_copper_5"
+    },
+    "ore=iron,liquid=false,level=1": {
+      "model": "uberhardcraft:block/fired_crucible_raw_iron_1"
+    },
+    "ore=iron,liquid=false,level=2": {
+      "model": "uberhardcraft:block/fired_crucible_raw_iron_2"
+    },
+    "ore=iron,liquid=false,level=3": {
+      "model": "uberhardcraft:block/fired_crucible_raw_iron_3"
+    },
+    "ore=iron,liquid=false,level=4": {
+      "model": "uberhardcraft:block/fired_crucible_raw_iron_4"
+    },
+    "ore=iron,liquid=false,level=5": {
+      "model": "uberhardcraft:block/fired_crucible_raw_iron_5"
     }
   }
 }
