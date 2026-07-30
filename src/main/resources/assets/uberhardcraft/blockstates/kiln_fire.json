@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "burning=false": {
+      "model": "uberhardcraft:block/kiln_fire"
+    },
+    "burning=true": {
+      "model": "uberhardcraft:block/kiln_fire_burning"
+    }
+  }
+}

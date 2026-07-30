@@ -17,7 +17,7 @@
       "conditions": {
         "items": [
           {
-            "items": "uberhardcraft:new_flint_small"
+            "items": "uberhardcraft:flint_plate_small"
           }
         ]
       }
@@ -27,7 +27,7 @@
       "conditions": {
         "items": [
           {
-            "items": "uberhardcraft:new_flint_large"
+            "items": "uberhardcraft:flint_plate_large"
           }
         ]
       }
@@ -37,7 +37,7 @@
       "conditions": {
         "items": [
           {
-            "items": "uberhardcraft:new_flint"
+            "items": "uberhardcraft:flint_plate"
           }
         ]
       }
