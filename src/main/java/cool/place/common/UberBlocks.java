@@ -131,7 +131,7 @@ public class UberBlocks {
     );
 
     public static final Block KILN_HATCH = register(
-            "kiln_hatch_block",
+            "kiln_hatch",
             settings -> new KilnHatchBlock(BlockSetType.OAK, settings),
             BlockBehaviour.Properties.of().sound(SoundType.STONE).strength(1.25F, 4.2F),
             true

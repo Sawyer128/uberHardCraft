@@ -1,9 +1,13 @@
 package cool.place.block;
 
 import com.mojang.serialization.MapCodec;
+import cool.place.UberHardCraft;
 import cool.place.blockentity.KilnFireBlockEntity;
+import cool.place.common.UberBlockEntities;
 import cool.place.common.UberItems;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -13,6 +17,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
@@ -54,7 +60,11 @@ public class KilnFireBlock extends BaseEntityBlock {
                 if (Math.random() <= 0.3) {
 
                     if (!level.isClientSide()) {
-                        fire.light();
+
+                        if (!fire.burning) {
+                            fire.light();
+                        }
+
                     }
 
                 }
@@ -74,6 +84,23 @@ public class KilnFireBlock extends BaseEntityBlock {
     @Override
     protected VoxelShape getShape(final BlockState state, final BlockGetter level, final BlockPos pos, final CollisionContext context) {
         return Block.box(0.0, 0.0, 0.0, 16.0, 5.5, 16.0);
+    }
+
+    @Override
+    protected void tick(final BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {
+        if (level.isClientSide()) return;
+
+        if (level.getBlockEntity(pos) instanceof KilnFireBlockEntity fire) {
+            fire.consumeFuel(level);
+            fire.burnTick += 1;
+
+            if (fire.burning) {
+                fire.kiln();
+                //level.scheduleTick(pos, state.getBlock(), 600);
+            }
+        }
+
+
     }
 
 }

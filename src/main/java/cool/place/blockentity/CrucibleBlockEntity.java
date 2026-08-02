@@ -45,4 +45,5 @@ public class CrucibleBlockEntity extends BlockEntity implements ContainerSingleI
     public void setTheItem(ItemStack itemStack) {
         this.item = itemStack;
     }
+
 }

@@ -2,6 +2,7 @@ package cool.place;
 
 import cool.place.common.UberBlockEntities;
 import cool.place.common.UberBlocks;
+import cool.place.common.UberCreativeTabs;
 import cool.place.common.UberItems;
 import net.fabricmc.api.ModInitializer;
 
@@ -28,6 +29,7 @@ public class UberHardCraft implements ModInitializer {
 		UberBlocks.initialize();
 		UberBlockEntities.initialize();
 		//UberTypes.initialize();
+		UberCreativeTabs.initialize();
 		LOGGER.info("Hello Fabric world!");
 	}
 

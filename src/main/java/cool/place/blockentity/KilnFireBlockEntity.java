@@ -1,5 +1,6 @@
 package cool.place.blockentity;
 
+import cool.place.block.CrucibleBlock;
 import cool.place.common.UberBlockEntities;
 import cool.place.common.UberBlocks;
 import cool.place.UberHardCraft;
@@ -10,6 +11,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -17,6 +19,8 @@ import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.Half;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,47 +38,104 @@ public class KilnFireBlockEntity extends BlockEntity {
     List<BlockPos> vents = new ArrayList<>();
     List<BlockPos> fuel = new ArrayList<>();
     BlockPos position = this.getBlockPos();
+    BlockPos cruciblePosition;
+    int crucibleTime;
+    BlockState blockState;
     Level world;
-    boolean burning = false;
+    public boolean burning = false;
     boolean Assembled = false;
+    public int burnTick = 0;
 
-    public void light() {
+    public void light () {
+
+        if (this.getLevel() == null) return;
 
         world = this.getLevel();
+        blockState = this.getLevel().getBlockState(position);
 
         fuel = identifyFuel(position, world);
 
         if (!fuel.isEmpty()) {
+            UberHardCraft.LOGGER.info("Fuel found! Blocks found: " + fuel.toArray().length);
             burning = true;
             world.setBlockAndUpdate(position, world.getBlockState(position).setValue(KilnFireBlock.BURNING, true));
+            kiln();
         }
 
     }
 
-    public void consumeFuel(final Level level) {
+    public void consumeFuel (final Level level) {
 
         if (!fuel.isEmpty()) {
 
             Random rand = new Random();
             int randIndex = rand.nextInt(fuel.size());
             BlockPos randFuelPos = fuel.get(randIndex);
-
             fuel.remove(randIndex);
-            level.setBlock(randFuelPos, Blocks.COAL_BLOCK.defaultBlockState(), 0);
+
+            level.setBlock(randFuelPos, Blocks.COAL_BLOCK.defaultBlockState(), 3);
 
         } else {
-            burning = false;
+            List<BlockPos> checkFuel = identifyFuel(position, world);
+            if (!checkFuel.isEmpty()) {
+                fuel = checkFuel;
+            } else {
+                burning = false;
+            }
+
         }
 
     }
 
+    public void assembly () {
+        Assembled = kilnAssembled();
+        kiln();
+        UberHardCraft.LOGGER.info("kiln: status " + Assembled);
+    }
+
     public void kiln () {
 
-        Assembled = kilnAssembled();
+        if (burning) {
 
-        // Use this method for fuel, heating crucible
+            UberHardCraft.LOGGER.info("kiln: current burntick " + burnTick);
 
-        UberHardCraft.LOGGER.info("kiln: status " + Assembled);
+            if (!world.getBlockTicks().hasScheduledTick(position, blockState.getBlock())) {
+
+                UberHardCraft.LOGGER.info("SCHEDULING TICK!");
+                world.scheduleTick(position, blockState.getBlock(), 60/*0*/);
+
+            }
+
+            if (cruciblePosition != null && world.getBlockState(cruciblePosition).is(UberBlocks.FIRED_CRUCIBLE)) {
+
+                UberHardCraft.LOGGER.info("crucible found!!! found at burn tick: " + crucibleTime);
+
+                if (Assembled && !(world.getBlockState(cruciblePosition).getValue(CrucibleBlock.LIQUID))) {
+
+                    int timeToBurn;
+
+                    // Prolly should change this its hardcoded haha
+
+                    if (world.getBlockState(cruciblePosition).getValue(CrucibleBlock.ORE).toString() == "copper") {
+                        timeToBurn = 5;
+                    } else if (world.getBlockState(cruciblePosition).getValue(CrucibleBlock.ORE).toString() == "iron") {
+                        timeToBurn = 9;
+                    } else {
+                        timeToBurn = 999999999;
+                    }
+
+
+                    CrucibleBlock crucible = (CrucibleBlock) world.getBlockState(cruciblePosition).getBlock();
+                    UberHardCraft.LOGGER.info("believed timeToBurn: " + timeToBurn);
+
+                    if ((burnTick - crucibleTime) == timeToBurn) world.setBlockAndUpdate(cruciblePosition, world.getBlockState(position).setValue(CrucibleBlock.LIQUID, true));
+                }
+            } else {
+                cruciblePosition = null;
+            }
+
+
+        }
 
     }
 
@@ -116,9 +177,14 @@ public class KilnFireBlockEntity extends BlockEntity {
                 vents.clear();
                 if (!checkCardinals(topPos, level, directions)) return checkVent(pos, level, directions);
 
-            } else {
+            } else if (level.getBlockState(topPos).is(UberBlocks.FIRED_CRUCIBLE) || level.getBlockState(topPos).is(UberBlocks.KILN_RACK) || level.getBlockState(topPos).is(Blocks.AIR)) {
+
+                if (level.getBlockState(topPos).is(UberBlocks.FIRED_CRUCIBLE) && !(topPos.equals(cruciblePosition))) { cruciblePosition = topPos; crucibleTime = burnTick; }
 
                 if (checkCardinals(topPos, level, directions)) return false;
+
+            } else {
+                return false;
             }
 
             topPos = topPos.above();
@@ -191,7 +257,7 @@ public class KilnFireBlockEntity extends BlockEntity {
                 state = level.getBlockState(searchPos);
 
                 if (state.is(BlockTags.LOGS)) {
-                    skbdHi.add(searchPos);
+                    skbdHi.add(searchPos.immutable());
                 }
 
             }
@@ -200,12 +266,5 @@ public class KilnFireBlockEntity extends BlockEntity {
         return skbdHi;
     }
 
-    public static void tick(Level level, BlockPos pos, BlockState state, KilnFireBlockEntity blockEntity) {
-        if (level.isClientSide()) return;
-
-        if (level.getGameTime() % 2000 == 0) {
-            blockEntity.consumeFuel(level);
-        }
-    }
 
 }

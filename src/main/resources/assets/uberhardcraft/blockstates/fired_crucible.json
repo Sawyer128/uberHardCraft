@@ -1,37 +1,100 @@
 {
   "variants": {
     "ore=none,liquid=false,level=0": {
-      "model": "uberhardcraft:block/fired_crucible"
+      "model": "uberhardcraft:block/fired_crucible/base"
+    },
+    "ore=none,liquid=false,level=1": {
+      "model": "uberhardcraft:block/fired_crucible/base"
+    },
+    "ore=none,liquid=false,level=2": {
+      "model": "uberhardcraft:block/fired_crucible/base"
+    },
+    "ore=none,liquid=false,level=3": {
+      "model": "uberhardcraft:block/fired_crucible/base"
+    },
+    "ore=none,liquid=false,level=4": {
+      "model": "uberhardcraft:block/fired_crucible/base"
+    },
+    "ore=none,liquid=false,level=5": {
+      "model": "uberhardcraft:block/fired_crucible/base"
+    },
+    "ore=none,liquid=true,level=0": {
+      "model": "uberhardcraft:block/fired_crucible/base"
+    },
+    "ore=none,liquid=true,level=1": {
+      "model": "uberhardcraft:block/fired_cruciblle/base"
+    },
+    "ore=none,liquid=true,level=2": {
+      "model": "uberhardcraft:block/fired_crucible/base"
+    },
+    "ore=none,liquid=true,level=3": {
+      "model": "uberhardcraft:block/fired_crucible/base"
+    },
+    "ore=none,liquid=true,level=4": {
+      "model": "uberhardcraft:block/fired_crucible/base"
+    },
+    "ore=none,liquid=true,level=5": {
+      "model": "uberhardcraft:block/fired_crucible/base"
     },
     "ore=copper,liquid=false,level=1": {
-      "model": "uberhardcraft:block/fired_crucible_raw_copper_1"
+      "model": "uberhardcraft:block/fired_crucible/raw_copper/1"
     },
     "ore=copper,liquid=false,level=2": {
-      "model": "uberhardcraft:block/fired_crucible_raw_copper_2"
+      "model": "uberhardcraft:block/fired_crucible/raw_copper/2"
     },
     "ore=copper,liquid=false,level=3": {
-      "model": "uberhardcraft:block/fired_crucible_raw_copper_3"
+      "model": "uberhardcraft:block/fired_crucible/raw_copper/3"
     },
     "ore=copper,liquid=false,level=4": {
-      "model": "uberhardcraft:block/fired_crucible_raw_copper_4"
+      "model": "uberhardcraft:block/fired_crucible/raw_copper/4"
     },
     "ore=copper,liquid=false,level=5": {
-      "model": "uberhardcraft:block/fired_crucible_raw_copper_5"
+      "model": "uberhardcraft:block/fired_crucible/raw_copper/5"
     },
     "ore=iron,liquid=false,level=1": {
-      "model": "uberhardcraft:block/fired_crucible_raw_iron_1"
+      "model": "uberhardcraft:block/fired_crucible/raw_iron/1"
     },
     "ore=iron,liquid=false,level=2": {
-      "model": "uberhardcraft:block/fired_crucible_raw_iron_2"
+      "model": "uberhardcraft:block/fired_crucible/raw_iron/2"
     },
     "ore=iron,liquid=false,level=3": {
-      "model": "uberhardcraft:block/fired_crucible_raw_iron_3"
+      "model": "uberhardcraft:block/fired_crucible/raw_iron/3"
     },
     "ore=iron,liquid=false,level=4": {
-      "model": "uberhardcraft:block/fired_crucible_raw_iron_4"
+      "model": "uberhardcraft:block/fired_crucible/raw_iron/4"
     },
     "ore=iron,liquid=false,level=5": {
-      "model": "uberhardcraft:block/fired_crucible_raw_iron_5"
+      "model": "uberhardcraft:block/fired_crucible/raw_iron/5"
+    },
+    "ore=iron,liquid=true,level=1": {
+      "model": "uberhardcraft:block/fired_crucible/liquid_iron/1"
+    },
+    "ore=iron,liquid=true,level=2": {
+      "model": "uberhardcraft:block/fired_crucible/liquid_iron/2"
+    },
+    "ore=iron,liquid=true,level=3": {
+      "model": "uberhardcraft:block/fired_crucible/liquid_iron/3"
+    },
+    "ore=iron,liquid=true,level=4": {
+      "model": "uberhardcraft:block/fired_crucible/liquid_iron/4"
+    },
+    "ore=iron,liquid=true,level=5": {
+      "model": "uberhardcraft:block/fired_crucible/liquid_iron/5"
+    },
+    "ore=copper,liquid=true,level=1": {
+      "model": "uberhardcraft:block/fired_crucible/liquid_copper/1"
+    },
+    "ore=copper,liquid=true,level=2": {
+      "model": "uberhardcraft:block/fired_crucible/liquid_copper/2"
+    },
+    "ore=copper,liquid=true,level=3": {
+      "model": "uberhardcraft:block/fired_crucible/liquid_copper/3"
+    },
+    "ore=copper,liquid=true,level=4": {
+      "model": "uberhardcraft:block/fired_crucible/liquid_copper/4"
+    },
+    "ore=copper,liquid=true,level=5": {
+      "model": "uberhardcraft:block/fired_crucible/liquid_copper/5"
     }
   }
 }

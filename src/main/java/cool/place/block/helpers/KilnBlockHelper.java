@@ -17,7 +17,7 @@ public class KilnBlockHelper {
 
             if (searchBlockEntity instanceof KilnFireBlockEntity fire) {
                 UberHardCraft.LOGGER.info("Fire found, calling kiln()");
-                fire.kiln();
+                fire.assembly();
             }
         }
     }

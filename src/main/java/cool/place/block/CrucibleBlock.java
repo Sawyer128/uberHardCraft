@@ -38,7 +38,9 @@ public class CrucibleBlock extends BaseEntityBlock {
     // public static final IntegerProperty ORE = IntegerProperty.create("ore", 0, 2);
     public static final EnumProperty<Ore> ORE = EnumProperty.create("ore", Ore.class);
 
-    // ORE: 0 is none, 1 is copper, 2 is iron...
+    private static final int copperBurnTime = 5;
+    private static final int ironBurnTime = 8;
+
 
     public static final TagKey<Item> MELTABLE = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath(UberHardCraft.MOD_ID, "meltable"));

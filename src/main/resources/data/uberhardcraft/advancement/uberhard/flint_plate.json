@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "id": "uberhardcraft:new_flint"
+      "id": "uberhardcraft:flint_plate"
     },
     "title": {
       "translate": "advancements.uberhard.flint_plate.title"
