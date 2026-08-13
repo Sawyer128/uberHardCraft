@@ -1,0 +1,34 @@
+{
+  "display": {
+    "icon": {
+      "id": "uberhardcraft:wooden_tongs"
+    },
+    "title": {
+      "translate": "advancements.uberhard.fired_crucible.title"
+    },
+    "description": {
+      "translate": "advancements.uberhard.fired_crucible.description"
+    }
+  },
+  "parent": "uberhardcraft:uberhard/kiln_fire",
+  "criteria": {
+    "wooden_tongs": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "uberhardcraft:wooden_tongs"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "wooden_tongs"
+    ]
+  ]
+}

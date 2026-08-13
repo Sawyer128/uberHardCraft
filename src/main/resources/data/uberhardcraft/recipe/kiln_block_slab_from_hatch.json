@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "uberhardcraft:kiln_hatch"
+  ],
+  "result": {
+    "id": "uberhardcraft:kiln_block_slab"
+  }
+}

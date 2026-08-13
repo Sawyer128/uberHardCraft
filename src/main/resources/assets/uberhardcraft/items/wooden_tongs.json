@@ -1,0 +1,16 @@
+{
+  "model": {
+    "type": "minecraft:condition",
+    "property": "minecraft:has_component",
+    "component": "uberhardcraft:crucible_data",
+    "on_true": {
+      "type": "minecraft:model",
+      "model": "uberhardcraft:item/wooden_tongs_holding_empty"
+    },
+    "on_false": {
+      "type": "minecraft:model",
+      "model": "uberhardcraft:item/wooden_tongs"
+    }
+
+  }
+}

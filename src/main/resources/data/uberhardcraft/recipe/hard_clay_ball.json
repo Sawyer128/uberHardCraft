@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:wheat",
+    "minecraft:clay_ball"
+  ],
+  "result": {
+    "id": "uberhardcraft:hard_clay_ball"
+  }
+}

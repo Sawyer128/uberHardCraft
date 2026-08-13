@@ -1,5 +1,6 @@
 package cool.place.type;
 
+import com.mojang.serialization.Codec;
 import net.minecraft.util.StringRepresentable;
 
 public enum Ore implements StringRepresentable {
@@ -22,4 +23,6 @@ public enum Ore implements StringRepresentable {
     public String getSerializedName() {
         return this.name;
     }
+
+    public static final Codec<Ore> CODEC = StringRepresentable.fromEnum(Ore::values);
 }

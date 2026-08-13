@@ -8,8 +8,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class sift_item extends Item {
-    public sift_item(Properties properties) {
+public class SiftItem extends Item {
+    public SiftItem(Properties properties) {
         super(properties);
     }
 

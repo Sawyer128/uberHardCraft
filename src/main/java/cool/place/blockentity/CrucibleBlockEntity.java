@@ -1,8 +1,14 @@
 package cool.place.blockentity;
 
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+import cool.place.block.CrucibleBlock;
 import cool.place.common.UberBlockEntities;
+import cool.place.component.CrucibleData;
+import cool.place.type.Ore;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.ValueInput;
@@ -45,5 +51,25 @@ public class CrucibleBlockEntity extends BlockEntity implements ContainerSingleI
     public void setTheItem(ItemStack itemStack) {
         this.item = itemStack;
     }
+
+    public CrucibleData getCrucibleData() {
+        return new CrucibleData( this.getBlockState().getValue(CrucibleBlock.LIQUID), this.getBlockState().getValue(CrucibleBlock.LEVEL), this.getBlockState().getValue(CrucibleBlock.ORE) );
+    }
+
+    /*public void setCrucibleData(CrucibleData crucibleData) {
+
+        if (this.level == null) return;
+
+        this.level.setBlockAndUpdate(this.worldPosition, this.getBlockState().setValue(CrucibleBlock.LIQUID, crucibleData.liquid()));
+        this.level.setBlockAndUpdate(this.worldPosition, this.getBlockState().setValue(CrucibleBlock.LEVEL, crucibleData.level()));
+        this.level.setBlockAndUpdate(this.worldPosition, this.getBlockState().setValue(CrucibleBlock.ORE, crucibleData.ore()));
+
+        this.item = switch (crucibleData.ore()) {
+            case raw_copper -> new ItemStack(Items.RAW_COPPER, crucibleData.level());
+            case raw_iron ->  new ItemStack(Items.RAW_IRON, crucibleData.level());
+            case air -> new ItemStack(Items.AIR);
+        };
+
+    }*/
 
 }

@@ -1,0 +1,31 @@
+{
+  "display": {
+    "icon": {
+      "id": "uberhardcraft:hard_clay_ball"
+    },
+    "title": {
+      "translate": "advancements.uberhard.hard_clay_ball.title"
+    },
+    "description": {
+      "translate": "advancements.uberhard.hard_clay_ball.description"
+    }
+  },
+  "parent": "uberhardcraft:uberhard/flint_plate",
+  "criteria": {
+    "hard_clay_ball": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "uberhardcraft:hard_clay_ball"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "hard_clay_ball"
+    ]
+  ]
+}

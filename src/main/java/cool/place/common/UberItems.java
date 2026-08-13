@@ -1,10 +1,7 @@
 package cool.place.common;
 
 import cool.place.UberHardCraft;
-import cool.place.item.axehead_item;
-import cool.place.item.pickhead_item;
-import cool.place.item.shovelhead_item;
-import cool.place.item.sift_item;
+import cool.place.item.*;
 import cool.place.type.FlintTool;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -35,10 +32,15 @@ public class UberItems {
     public static final Item FLINT_SHOVELHEAD = register("flint_shovelhead", shovelhead_item::new, new Item.Properties());
     public static final Item FLINT_PICKAXEHEAD = register("flint_pickaxehead", pickhead_item::new, new Item.Properties());
     public static final Item BARK = register("bark_fiber", Item::new, new Item.Properties());
-    public static final Item WOODEN_SIFT = register("wooden_sift", sift_item::new, new Item.Properties()
+    public static final Item HARD_CLAY_BALL = register("hard_clay_ball", Item::new, new Item.Properties());
+    public static final Item WOODEN_SIFT = register("wooden_sift", SiftItem::new, new Item.Properties()
             .durability(10));
     public static final Item FIRESTARTER = register("firestarter", Item::new, new Item.Properties()
             .durability(10));
+    public static final Item WOODEN_TONGS = register("wooden_tongs", TongsItem::new, new Item.Properties()
+            .durability(10));
+    public static final Item METAL_TONGS = register("metal_tongs", TongsItem::new, new Item.Properties()
+            .durability(100));
     public static final Item FLINT_AXE = register(
             "flint_axe",
             settings -> new AxeItem(FlintTool.FLINT_TOOL_MATERIAL, 2.0F, -3.0F, settings),
@@ -54,6 +56,10 @@ public class UberItems {
             Item::new,
             new Item.Properties().pickaxe(FlintTool.FLINT_TOOL_MATERIAL, 1f, 1f)
     );
+
+    public static final Item COPPER_AXEHEAD = register("copper_axehead", axehead_item::new, new Item.Properties());
+    public static final Item COPPER_SHOVELHEAD = register("copper_shovelhead", shovelhead_item::new, new Item.Properties());
+    public static final Item COPPER_PICKHEAD = register("copper_pickhead", pickhead_item::new, new Item.Properties());
 
 
 

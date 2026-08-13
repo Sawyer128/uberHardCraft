@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#C",
+    "L#"
+  ],
+  "key": {
+    "#": "minecraft:stick",
+    "C": "#minecraft:coals",
+    "L": "#minecraft:logs"
+  },
+  "result": {
+    "id": "uberhardcraft:kiln_fire"
+  }
+}

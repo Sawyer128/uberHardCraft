@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": "uberhardcraft:kiln_block_slab"
+  },
+  "result": {
+    "id": "uberhardcraft:kiln_block"
+  }
+}

@@ -27,6 +27,24 @@
           "name": "minecraft:clay_ball"
         }
       ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "uberhardcraft:copper_shovelhead",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "uberhardcraft:mold_shovelhead",
+              "properties": {
+                "ore": "copper"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

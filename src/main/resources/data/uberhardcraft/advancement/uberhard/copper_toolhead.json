@@ -1,0 +1,53 @@
+{
+  "display": {
+    "icon": {
+      "id": "uberhardcraft:copper_axehead"
+    },
+    "title": {
+      "translate": "advancements.uberhard.copper_toolhead.title"
+    },
+    "description": {
+      "translate": "advancements.uberhard.copper_toolhead.description"
+    }
+  },
+  "parent": "uberhardcraft:uberhard/fired_crucible",
+  "criteria": {
+    "axe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "uberhardcraft:copper_axehead"
+          }
+        ]
+      }
+    },
+    "pick": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "uberhardcraft:copper_pickhead"
+          }
+        ]
+      }
+    },
+    "shovel": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "uberhardcraft:copper_shovelhead"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "axe",
+      "pick",
+      "shovel"
+    ]
+  ]
+}

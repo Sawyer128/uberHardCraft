@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "uberhardcraft:copper_shovelhead",
+    "uberhardcraft:bark_fiber",
+    "minecraft:stick"
+  ],
+  "result": {
+    "id": "minecraft:copper_shovel"
+  }
+}

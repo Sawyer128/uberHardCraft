@@ -76,21 +76,21 @@ public class UberBlocks {
 
     public static final Block MOLD_AXEHEAD = register(
             "mold_axehead",
-            FlatMediumBlock::new,
+            MoldBlock::new,
             BlockBehaviour.Properties.of().sound(SoundType.GRAVEL),
             true
     );
 
     public static final Block MOLD_PICKHEAD = register(
             "mold_pickhead",
-            FlatMediumBlock::new,
+            MoldBlock::new,
             BlockBehaviour.Properties.of().sound(SoundType.GRAVEL),
             true
     );
 
     public static final Block MOLD_SHOVELHEAD = register(
             "mold_shovelhead",
-            FlatMediumBlock::new,
+            MoldBlock::new,
             BlockBehaviour.Properties.of().sound(SoundType.GRAVEL),
             true
     );
@@ -112,35 +112,35 @@ public class UberBlocks {
     public static final Block KILN_BLOCK = register(
             "kiln_block",
             KilnBlock::new,
-            BlockBehaviour.Properties.of().sound(SoundType.STONE).strength(1.25F, 4.2F),
+            BlockBehaviour.Properties.of().sound(SoundType.MUD).strength(1.25F, 4.2F),
             true
     );
 
     public static final Block KILN_VENT = register(
             "kiln_vent",
             KilnBlock::new,
-            BlockBehaviour.Properties.of().sound(SoundType.STONE).strength(1.25F, 4.2F),
+            BlockBehaviour.Properties.of().sound(SoundType.MUD).strength(1.25F, 4.2F),
             true
     );
 
     public static final Block KILN_BLOCK_SLAB = register(
             "kiln_block_slab",
             SlabBlock::new,
-            BlockBehaviour.Properties.of().sound(SoundType.STONE).strength(1.25F, 4.2F),
+            BlockBehaviour.Properties.of().sound(SoundType.MUD).strength(1.25F, 4.2F),
             true
     );
 
     public static final Block KILN_HATCH = register(
             "kiln_hatch",
             settings -> new KilnHatchBlock(BlockSetType.OAK, settings),
-            BlockBehaviour.Properties.of().sound(SoundType.STONE).strength(1.25F, 4.2F),
+            BlockBehaviour.Properties.of().sound(SoundType.MUD).strength(1.25F, 4.2F),
             true
     );
 
     public static final Block KILN_RACK = register(
             "kiln_rack",
             KilnRackBlock::new,
-            BlockBehaviour.Properties.of().sound(SoundType.STONE).strength(1.25F, 4.2F),
+            BlockBehaviour.Properties.of().sound(SoundType.MUD).strength(1.25F, 4.2F),
             true
     );
 

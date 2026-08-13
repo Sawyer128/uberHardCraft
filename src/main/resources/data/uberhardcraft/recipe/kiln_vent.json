@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "o#",
+    "#o"
+  ],
+  "key": {
+    "o": "uberhardcraft:hard_clay_ball",
+    "#": "minecraft:stick"
+  },
+  "result": {
+    "id": "uberhardcraft:kiln_vent"
+  }
+}

@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
+    "ore=none": {
       "model": "uberhardcraft:block/mold_shovelhead"
+    },
+    "ore=copper": {
+      "model": "uberhardcraft:block/mold_shovelhead_copper"
     }
   }
 }

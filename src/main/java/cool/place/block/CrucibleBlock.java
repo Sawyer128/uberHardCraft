@@ -15,6 +15,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
@@ -78,7 +79,12 @@ public class CrucibleBlock extends BaseEntityBlock {
         boolean liquid = state.getValue(LIQUID);
         int model_height = state.getValue(LEVEL);
         /*int ore_type = state.getValue(ORE);*/
-        ItemStack crucibleItem = crucibleBlockEntity.getTheItem();
+        //ItemStack crucibleItem = crucibleBlockEntity.getTheItem();
+        ItemStack crucibleItem = (switch (state.getValue(ORE)) {
+            case raw_copper -> new ItemStack(Items.RAW_COPPER, state.getValue(LEVEL));
+            case raw_iron ->  new ItemStack(Items.RAW_IRON, state.getValue(LEVEL));
+            case air -> new ItemStack(Items.AIR);
+        });
 
         if (!player.getItemInHand(hand).isEmpty() && stack.is(MELTABLE) && !liquid && !(crucibleItem.count() == 5) && (crucibleItem.isEmpty() || ItemStack.isSameItemSameComponents(crucibleItem, stack) && crucibleItem.getCount() < crucibleItem.getMaxStackSize())) {
             ItemStack givenItem = stack.consumeAndReturn(1, player);

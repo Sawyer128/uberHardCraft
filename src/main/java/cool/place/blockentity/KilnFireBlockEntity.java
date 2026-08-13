@@ -39,6 +39,7 @@ public class KilnFireBlockEntity extends BlockEntity {
     List<BlockPos> fuel = new ArrayList<>();
     BlockPos position = this.getBlockPos();
     BlockPos cruciblePosition;
+    BlockPos unfiredCruciblePosition;
     int crucibleTime;
     BlockState blockState;
     Level world;
@@ -56,7 +57,7 @@ public class KilnFireBlockEntity extends BlockEntity {
         fuel = identifyFuel(position, world);
 
         if (!fuel.isEmpty()) {
-            UberHardCraft.LOGGER.info("Fuel found! Blocks found: " + fuel.toArray().length);
+            //UberHardCraft.LOGGER.info("Fuel found! Blocks found: " + fuel.toArray().length);
             burning = true;
             world.setBlockAndUpdate(position, world.getBlockState(position).setValue(KilnFireBlock.BURNING, true));
             kiln();
@@ -81,6 +82,7 @@ public class KilnFireBlockEntity extends BlockEntity {
                 fuel = checkFuel;
             } else {
                 burning = false;
+                world.setBlockAndUpdate(position, world.getBlockState(position).setValue(KilnFireBlock.BURNING, false));
             }
 
         }
@@ -90,25 +92,22 @@ public class KilnFireBlockEntity extends BlockEntity {
     public void assembly () {
         Assembled = kilnAssembled();
         kiln();
-        UberHardCraft.LOGGER.info("kiln: status " + Assembled);
+        //UberHardCraft.LOGGER.info("kiln: status " + Assembled);
     }
 
     public void kiln () {
 
         if (burning) {
 
-            UberHardCraft.LOGGER.info("kiln: current burntick " + burnTick);
+            //UberHardCraft.LOGGER.info("kiln: current burntick " + burnTick);
 
             if (!world.getBlockTicks().hasScheduledTick(position, blockState.getBlock())) {
 
-                UberHardCraft.LOGGER.info("SCHEDULING TICK!");
-                world.scheduleTick(position, blockState.getBlock(), 60/*0*/);
+                world.scheduleTick(position, blockState.getBlock(), 180);
 
             }
 
             if (cruciblePosition != null && world.getBlockState(cruciblePosition).is(UberBlocks.FIRED_CRUCIBLE)) {
-
-                UberHardCraft.LOGGER.info("crucible found!!! found at burn tick: " + crucibleTime);
 
                 if (Assembled && !(world.getBlockState(cruciblePosition).getValue(CrucibleBlock.LIQUID))) {
 
@@ -124,16 +123,31 @@ public class KilnFireBlockEntity extends BlockEntity {
                         timeToBurn = 999999999;
                     }
 
-
                     CrucibleBlock crucible = (CrucibleBlock) world.getBlockState(cruciblePosition).getBlock();
-                    UberHardCraft.LOGGER.info("believed timeToBurn: " + timeToBurn);
 
-                    if ((burnTick - crucibleTime) == timeToBurn) world.setBlockAndUpdate(cruciblePosition, world.getBlockState(position).setValue(CrucibleBlock.LIQUID, true));
+                    if ((burnTick - crucibleTime) == timeToBurn) {
+                        world.setBlockAndUpdate(cruciblePosition, world.getBlockState(cruciblePosition).setValue(CrucibleBlock.LIQUID, true));
+                    }
                 }
             } else {
                 cruciblePosition = null;
             }
 
+            if (unfiredCruciblePosition != null && world.getBlockState(unfiredCruciblePosition).is(UberBlocks.UNFIRED_CRUCIBLE)) {
+
+                if (Assembled) {
+
+                    int timeToBurn = 3;
+
+                    if ((burnTick - crucibleTime) == timeToBurn) {
+                        world.setBlock(unfiredCruciblePosition, UberBlocks.FIRED_CRUCIBLE.defaultBlockState(), 3);
+                    }
+
+                }
+
+            } else {
+                unfiredCruciblePosition = null;
+            }
 
         }
 
@@ -177,9 +191,13 @@ public class KilnFireBlockEntity extends BlockEntity {
                 vents.clear();
                 if (!checkCardinals(topPos, level, directions)) return checkVent(pos, level, directions);
 
-            } else if (level.getBlockState(topPos).is(UberBlocks.FIRED_CRUCIBLE) || level.getBlockState(topPos).is(UberBlocks.KILN_RACK) || level.getBlockState(topPos).is(Blocks.AIR)) {
+            } else if (level.getBlockState(topPos).is(UberBlocks.FIRED_CRUCIBLE) || level.getBlockState(topPos).is(UberBlocks.UNFIRED_CRUCIBLE) || level.getBlockState(topPos).is(UberBlocks.KILN_RACK) || level.getBlockState(topPos).is(Blocks.AIR)) {
 
-                if (level.getBlockState(topPos).is(UberBlocks.FIRED_CRUCIBLE) && !(topPos.equals(cruciblePosition))) { cruciblePosition = topPos; crucibleTime = burnTick; }
+                if (level.getBlockState(topPos).is(UberBlocks.FIRED_CRUCIBLE) && !(topPos.equals(cruciblePosition))) {
+                    cruciblePosition = topPos; crucibleTime = burnTick; //UberHardCraft.LOGGER.info("crucible found!!! found at burn tick: " + crucibleTime);
+                } else if (level.getBlockState(topPos).is(UberBlocks.UNFIRED_CRUCIBLE) && !(topPos.equals(unfiredCruciblePosition))) {
+                    unfiredCruciblePosition = topPos; crucibleTime = burnTick; //UberHardCraft.LOGGER.info("UNFIRED crucible found!!! found at burn tick: " + crucibleTime);
+                }
 
                 if (checkCardinals(topPos, level, directions)) return false;
 

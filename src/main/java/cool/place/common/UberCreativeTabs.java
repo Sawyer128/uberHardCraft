@@ -22,13 +22,19 @@ public class UberCreativeTabs {
             .displayItems((parameters, output) -> {
                 output.accept(UberItems.BARK);
                 output.accept(UberItems.ROCK);
+                output.accept(UberItems.HARD_CLAY_BALL);
                 output.accept(UberItems.FLINT_PICKAXEHEAD);
                 output.accept(UberItems.FLINT_AXEHEAD);
                 output.accept(UberItems.FLINT_SHOVELHEAD);
+                output.accept(UberItems.COPPER_PICKHEAD);
+                output.accept(UberItems.COPPER_AXEHEAD);
+                output.accept(UberItems.COPPER_SHOVELHEAD);
                 output.accept(UberBlocks.FLINT_PLATE_LARGE);
                 output.accept(UberBlocks.FLINT_PLATE);
                 output.accept(UberBlocks.FLINT_PLATE_SMALL);
                 output.accept(UberItems.WOODEN_SIFT);
+                output.accept(UberItems.WOODEN_TONGS);
+                output.accept(UberItems.METAL_TONGS);
                 output.accept(UberItems.FIRESTARTER);
                 output.accept(UberItems.FLINT_PICKAXE);
                 output.accept(UberItems.FLINT_AXE);
