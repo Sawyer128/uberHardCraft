@@ -1,4 +1,4 @@
-package place.uberhard.mixin;
+package place.uberhard.mixins;
 
 import net.minecraft.server.MinecraftServer;
 import org.spongepowered.asm.mixin.Mixin;

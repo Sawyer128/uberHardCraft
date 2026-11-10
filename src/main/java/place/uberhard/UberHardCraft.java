@@ -6,6 +6,8 @@ import net.minecraft.resources.Identifier;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import place.uberhard.reg.UberItemIds;
+import place.uberhard.reg.UberItems;
 
 public class UberHardCraft implements ModInitializer {
 	public static final String MOD_ID = "uberhardcraft";
@@ -21,7 +23,10 @@ public class UberHardCraft implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		LOGGER.info("Hello Fabric world!");
+		UberItemIds.init();
+		UberItems.init();
+
+		//LOGGER.info("Hello Fabric world!");
 	}
 
 	public static Identifier id(String path) {
