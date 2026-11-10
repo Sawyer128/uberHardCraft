@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "uberhardcraft",
+	"version": "${version}",
+	"name": "uberHardCraft",
+	"description": "Making Minecraft fun again, the hard way.",
+	"authors": [
+		"Sawyer128"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/uberhardcraft",
+		"sources": "https://github.com/Sawyer128/uberHardCraft"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/uberhardcraft/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"place.uberhard.UberHardCraft"
+		],
+		"client": [
+			"place.uberhard.client.UberHardCraftClient"
+		],
+		"fabric-datagen": [
+			"place.uberhard.client.UberHardCraftDataGenerator"
+		]
+	},
+	"mixins": [
+		"uberhardcraft.mixins.json",
+		{
+			"config": "uberhardcraft.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
