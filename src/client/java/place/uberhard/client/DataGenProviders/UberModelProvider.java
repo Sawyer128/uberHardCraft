@@ -22,6 +22,7 @@ public class UberModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerators itemModelGenerator) {
         itemModelGenerator.generateFlatItem(UberItems.FLINT_PICKHEAD, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(UberItems.BARK_FIBER, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(UberItems.FLINT_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
     }
 
     @Override

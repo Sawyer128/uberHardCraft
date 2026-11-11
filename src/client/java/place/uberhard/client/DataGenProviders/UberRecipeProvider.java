@@ -1,39 +1,58 @@
 package place.uberhard.client.DataGenProviders;
 
+import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
 
 import net.minecraft.advancements.Advancement;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.data.recipes.SpecialRecipeBuilder;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
-
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.world.item.crafting.Recipe;
-import place.uberhard.reg.UberItems;
+import net.minecraft.world.level.ItemLike;
+import place.uberhard.data.UberToolParts;
+import place.uberhard.recipes.UberToolRecipeBuilder;
 
 public class UberRecipeProvider extends FabricRecipeProvider {
+
+
+
     public UberRecipeProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }
 
     @Override
-    protected RecipeProvider createRecipeProvider(HolderLookup.Provider registryLookup, RecipeOutput exporter) {
-        return new RecipeProvider(registryLookup, exporter) {
+    protected RecipeProvider createRecipeProvider(HolderLookup.Provider registryLookup, BootstrapContext<Recipe<?>> recipes, BootstrapContext<Advancement> advancements) {
+        return new RecipeProvider(recipes, advancements) {
             @Override
             public void buildRecipes() {
-                HolderLookup.RegistryLookup<Item> itemLookup = registries.lookupOrThrow(Registries.ITEM);
+                HolderLookup.RegistryLookup<Item> itemLookup = registryLookup.lookupOrThrow(Registries.ITEM);
 
-                shapeless(RecipeCategory.TOOLS, Items.DIRT)
-                        .requires(UberItemTagProvider.ATTACHERS)
-                        .requires(UberItemTagProvider.HANDLES)
-                        .requires(UberItems.FLINT_PICKHEAD)
-                        .save(output);
+                Collection<ResourceKey<Item>> TOOL_HEADS = UberToolParts.TOOL_HEAD_QUALITIES.keySet();
+                for (ResourceKey<Item> toolHeadId : TOOL_HEADS) {
+                    Item toolHeadItem = BuiltInRegistries.ITEM.getValue(toolHeadId);
+                    if (toolHeadItem == null) return;
+
+                    UberToolRecipeBuilder.toolqual(itemLookup, RecipeCategory.TOOLS, UberToolParts.getTool(toolHeadItem))
+                            .requires(UberItemTagProvider.ATTACHERS)
+                            .requires(UberItemTagProvider.HANDLES)
+                            .requires(toolHeadItem)
+                            .unlockedBy(getHasName(toolHeadItem), has(toolHeadItem))
+                            .save(output);
+
+                    //shapeless(RecipeCategory.TOOLS, UberToolParts.getTool(toolHeadItem))
+                }
+
+
+
             }
         };
     }

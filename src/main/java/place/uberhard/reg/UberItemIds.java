@@ -15,9 +15,8 @@ public class UberItemIds {
 
     public static ResourceKey<Item> BARK_FIBER = create("bark_fiber");
 
+    public static ResourceKey<Item> FLINT_PICKAXE = create("flint_pickaxe");
 
-    public static void init() {
-
-    }
+    public static void init() { }
 
 }

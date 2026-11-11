@@ -21,5 +21,6 @@ public class UberEnglishLangProvider extends FabricLanguageProvider {
 
         translationBuilder.add(item + UberItemIds.FLINT_PICKHEAD.identifier().getPath(), "Flint Pickaxe Head");
         translationBuilder.add(item + UberItemIds.BARK_FIBER.identifier().getPath(), "Bark Fiber");
+        translationBuilder.add(item + UberItemIds.FLINT_PICKAXE.identifier().getPath(), "Flint Pickaxe");
     }
 }
