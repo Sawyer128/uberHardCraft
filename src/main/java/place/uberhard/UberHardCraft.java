@@ -1,11 +1,13 @@
 package place.uberhard;
 
 import net.fabricmc.api.ModInitializer;
-
+import net.fabricmc.fabric.api.item.v1.ItemComponentTooltipProviderRegistry;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.Identifier;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import place.uberhard.component.ComponentWithTooltip;
 import place.uberhard.reg.UberComponents;
 import place.uberhard.reg.UberItemIds;
 import place.uberhard.reg.UberItems;

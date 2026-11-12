@@ -20,6 +20,13 @@ public class UberModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerator) {
+        itemModelGenerator.generateFlatItem(UberItems.COPPER_ROD, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(UberItems.COPPER_HANDLE, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(UberItems.GOLD_ROD, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(UberItems.GOLD_HANDLE, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(UberItems.IRON_ROD, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(UberItems.IRON_HANDLE, ModelTemplates.FLAT_ITEM);
+
         itemModelGenerator.generateFlatItem(UberItems.FLINT_PICKHEAD, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(UberItems.BARK_FIBER, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(UberItems.FLINT_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);

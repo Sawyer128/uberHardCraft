@@ -14,23 +14,47 @@ import java.util.Map;
 public class UberToolParts {
 
     // All the tool heads, handles, and attachers should be included
+
+    //Special ones aren't included in the tag
+
+    public static final Map<ResourceKey<Item>, Integer> SPEC_HANDLE_QUALITIES = Map.of(
+            //Special Handles
+            ItemIds.BLAZE_ROD, 10
+    );
+
+    public static final Map<ResourceKey<Item>, Integer> SPEC_ATTACHER_QUALITIES = Map.of(
+            //Special Attachers
+            ItemIds.MAGMA_CREAM, 10
+    );
+
     // Each HashMap is used in the tagProvider and recipeProvider to automatically create tags and recipes
 
     public static final Map<ResourceKey<Item>, Integer> ATTACHER_QUALITIES = Map.of(
             //Attachers
-            BlockItemIds.TRIPWIRE.item(), 10,
+            BlockItemIds.TRIPWIRE.item(), 3,
             ItemIds.SLIME_BALL, 5,
-            UberItemIds.BARK_FIBER, 1
+            UberItemIds.BARK_FIBER, 1,
+            ItemIds.HONEY_BOTTLE, 5
     );
 
-    public static final Map<ResourceKey<Item>, Integer> HANDLE_QUALITIES = Map.of(
+    public static final Map<ResourceKey<Item>, Integer> HANDLE_QUALITIES = Map.ofEntries(
             //Handles
-            ItemIds.STICK, 1
+            Map.entry(ItemIds.STICK, 1),
+            Map.entry(ItemIds.BONE, 4),
+            Map.entry(ItemIds.BREEZE_ROD, 10),
+            Map.entry(BlockItemIds.CARROT_CROP.item(), 2),
+            Map.entry(BlockItemIds.BAMBOO.item(), 2),
+            Map.entry(UberItemIds.COPPER_ROD, 5),
+            Map.entry(UberItemIds.COPPER_HANDLE, 10),
+            Map.entry(UberItemIds.IRON_ROD, 15),
+            Map.entry(UberItemIds.IRON_HANDLE, 20),
+            Map.entry(UberItemIds.GOLD_ROD, 16),
+            Map.entry(UberItemIds.GOLD_HANDLE, 21)
     );
 
     public static final Map<ResourceKey<Item>, Integer> TOOL_HEAD_QUALITIES = Map.of(
             //Tool heads
-            UberItemIds.FLINT_PICKHEAD, 5
+            UberItemIds.FLINT_PICKHEAD, 3
     );
 
     private static final Map<Item, Item> HEAD_TO_TOOL = Map.of(

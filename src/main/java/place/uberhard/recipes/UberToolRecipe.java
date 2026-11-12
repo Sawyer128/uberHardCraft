@@ -14,6 +14,7 @@ import net.minecraft.world.item.crafting.display.RecipeDisplay;
 import net.minecraft.world.item.crafting.display.ShapelessCraftingRecipeDisplay;
 import net.minecraft.world.item.crafting.display.SlotDisplay;
 import net.minecraft.world.level.Level;
+import place.uberhard.component.ComponentWithTooltip;
 import place.uberhard.data.UberToolParts;
 import place.uberhard.reg.UberComponents;
 
@@ -74,6 +75,7 @@ public class UberToolRecipe extends NormalCraftingRecipe {
 
         ItemStack finalResult = this.result.create();
         finalResult.set(UberComponents.UBER_TOOL_QUALITY, totalQuality);
+        finalResult.set(UberComponents.COMPONENT_WITH_TOOLTIP, new ComponentWithTooltip(totalQuality));
 
         return finalResult;
     }

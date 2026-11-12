@@ -18,10 +18,10 @@ public class FlintTool {
 
     public static final ToolMaterial FLINT_TOOL_MATERIAL = new ToolMaterial(
             INCORRECT_FOR_FLINT_TOOL,
-            32,
-            1.4F,
-            1.5F,
-            5,
+            150,
+            0.0F,
+            0.0F,
+            15,
             REPAIRS_FLINT_TOOL
     );
 }
